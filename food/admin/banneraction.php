@@ -39,7 +39,7 @@ if(isset($_REQUEST['BannerdeletId'])){
 
 if(isset($_POST['submit']) && isset($_POST['editbanner'])){
 
-	//echo "<pre>"; print_r($_POST); exit;
+	echo "<pre>"; print_r($_POST); exit;
 
 	$sldid =$_REQUEST['editbanner'];
 	$sldtitle = $_POST['slidertitle'];
