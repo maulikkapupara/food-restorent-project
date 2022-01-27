@@ -47,7 +47,7 @@
                             </a>
                         </div>
                         <div class="login-form">
-                        <form action="login.php" method="post">
+                        <form action="login_db.php" method="post">
                                 <div class="form-group">
                                     <label>Email Address </label>
                                     <input class="au-input au-input--full" type="text" name="email" placeholder="Email">
