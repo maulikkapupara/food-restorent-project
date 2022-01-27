@@ -5,7 +5,7 @@ include("include/config.php");
 $uname = $_POST['uname'];
 $pass = $_POST['password'];
 
-$sql="SELECT * FROM adminuser WHERE username='$uname' AND password=MD5('$pass')";
+$sql="SELECT * FROM admin WHERE username='$uname' AND password='$pass'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 

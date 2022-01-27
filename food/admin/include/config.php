@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db = "nutbut";
+$db = "restorent";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password,$db);
