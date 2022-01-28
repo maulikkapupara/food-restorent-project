@@ -256,7 +256,7 @@
                                                     <img src="<?php echo $row['sliderimg']; ?>" width="50" height="50">
                                                 </td>
                                                 <td>
-                                                    <a href="banner.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
+                                                    <a href="banneraction.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
                                                     <a href="banneraction.php?BannerdeletId=<?php echo $row['id']; ?>&DeleteImg=<?php echo $row['sliderimg']; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                                 </td>
                                                 
