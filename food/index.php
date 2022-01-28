@@ -58,8 +58,8 @@
 								<p class="subtitle">Fresh & Organic</p>
 								<h1>Delicious Seasonal Fruits</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Fruit Collection</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.php" class="boxed-btn">Fruit Collection</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -77,8 +77,8 @@
 								<p class="subtitle">Fresh Everyday</p>
 								<h1>100% Organic Collection</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.php" class="boxed-btn">Visit Shop</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -96,8 +96,8 @@
 								<p class="subtitle">Mega Sale Going On!</p>
 								<h1>Get December Discount</h1>
 								<div class="hero-btns">
-									<a href="shop.html" class="boxed-btn">Visit Shop</a>
-									<a href="contact.html" class="bordered-btn">Contact Us</a>
+									<a href="shop.php" class="boxed-btn">Visit Shop</a>
+									<a href="contact.php" class="bordered-btn">Contact Us</a>
 								</div>
 							</div>
 						</div>
@@ -169,7 +169,7 @@
     	<div class="container">
         	<h3>December sale is on! <br> with big <span class="orange-text">Discount...</span></h3>
             <div class="sale-percent"><span>Sale! <br> Upto</span>50% <span>off</span></div>
-            <a href="shop.html" class="cart-btn btn-lg">Shop Now</a>
+            <a href="shop.php" class="cart-btn btn-lg">Shop Now</a>
         </div>
     </section> -->
 	<!-- end shop banner -->
@@ -190,50 +190,50 @@
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-1"></div></a>
+						<a href="single-news.php"><div class="latest-news-bg news-bg-1"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html">You will vainly look for fruit on it in autumn.</a></h3>
+							<h3><a href="single-news.php">You will vainly look for fruit on it in autumn.</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-2"></div></a>
+						<a href="single-news.php"><div class="latest-news-bg news-bg-2"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html">A man's worth has its season, like tomato.</a></h3>
+							<h3><a href="single-news.php">A man's worth has its season, like tomato.</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0">
 					<div class="single-latest-news">
-						<a href="single-news.html"><div class="latest-news-bg news-bg-3"></div></a>
+						<a href="single-news.php"><div class="latest-news-bg news-bg-3"></div></a>
 						<div class="news-text-box">
-							<h3><a href="single-news.html">Good thoughts bear good fresh juicy fruit.</a></h3>
+							<h3><a href="single-news.php">Good thoughts bear good fresh juicy fruit.</a></h3>
 							<p class="blog-meta">
 								<span class="author"><i class="fas fa-user"></i> Admin</span>
 								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
 							</p>
 							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.html" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 text-center">
-					<a href="news.html" class="boxed-btn">More News</a>
+					<a href="news.php" class="boxed-btn">More News</a>
 				</div>
 			</div>
 		</div>

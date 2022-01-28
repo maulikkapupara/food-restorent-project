@@ -9,6 +9,18 @@
                             <a href="banner.php">
                                 <i class="fas fa-sliders"></i>BANNER</a>
                         </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-shopping-cart"></i>PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>BLOG</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-truck"></i>ORDER</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

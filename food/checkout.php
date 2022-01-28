@@ -99,7 +99,7 @@
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 						      <div class="card-body">
 						        <div class="billing-address-form">
-						        	<form action="index.html">
+						        	<form action="index.php">
 						        		<p><input type="text" placeholder="Name"></p>
 						        		<p><input type="email" placeholder="Email"></p>
 						        		<p><input type="text" placeholder="Address"></p>
