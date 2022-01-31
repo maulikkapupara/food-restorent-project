@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include ("include/config.php"); ?>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,7 +51,12 @@
 	<!-- banner area -->
 	<div class="homepage-slider">
 		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-1">
+		<?php                
+			$seletBanner = "SELECT *FROM banner";
+			$result = $conn->query($seletBanner);
+			while ($row = $result->fetch_assoc()){
+		?>
+		<div class="single-homepage-slider " style="background-image:url(Admin/<?php echo $row['sliderimg'];?>);">
 			<div class="container">
 				<div class="row">
 					<!-- <div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
@@ -67,44 +74,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-2">
-			<div class="container">
-				<div class="row">
-					<!-- <div class="col-lg-10 offset-lg-1 text-center">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Fresh Everyday</p>
-								<h1>100% Organic Collection</h1>
-								<div class="hero-btns">
-									<a href="shop.php" class="boxed-btn">Visit Shop</a>
-									<a href="contact.php" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div> -->
-				</div>
-			</div>
-		</div>
-		<!-- single home slider -->
-		<div class="single-homepage-slider homepage-bg-3">
-			<div class="container">
-				<div class="row">
-					<!-- <div class="col-lg-10 offset-lg-1 text-right">
-						<div class="hero-text">
-							<div class="hero-text-tablecell">
-								<p class="subtitle">Mega Sale Going On!</p>
-								<h1>Get December Discount</h1>
-								<div class="hero-btns">
-									<a href="shop.php" class="boxed-btn">Visit Shop</a>
-									<a href="contact.php" class="bordered-btn">Contact Us</a>
-								</div>
-							</div>
-						</div>
-					</div> -->
-				</div>
-			</div>
-		</div>
+		<?php } ?>
 	</div>
 	<!-- end banner area -->
 

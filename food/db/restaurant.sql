@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2022 at 07:59 PM
+-- Generation Time: Jan 31, 2022 at 09:14 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -59,9 +59,9 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `slidertitel`, `sliderimg`) VALUES
-(2, 'banner3', 'upload/Elaichi.png'),
-(3, 'banner2', 'upload/Screenshot (8).png'),
-(4, 'banner1', 'upload/Anjir.png');
+(1, 'banner1', 'upload/banner1.jpg'),
+(2, 'banner2', 'upload/banner2.jpg'),
+(3, 'banner3', 'upload/banner3.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,13 +76,6 @@ CREATE TABLE `blog` (
   `blogimg` varchar(255) NOT NULL,
   `create_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `blog`
---
-
-INSERT INTO `blog` (`id`, `blogtitle`, `blogdescription`, `blogimg`, `create_date`) VALUES
-(1, 'fast food lover', '', 'upload/blog/Badam.jpg', '2022-01-31');
 
 -- --------------------------------------------------------
 
@@ -103,7 +96,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `productname`, `discription`, `price`, `productimg`) VALUES
-(2, 'panipuri', 'panipuri is the best and testy food in our resturent', 20, 'upload/product/Badam.jpg');
+(2, 'abcd', 'djbjsdjvfugsegfjsgjfgjsgduyjgdj', 20, 'upload/product/Badam.jpg');
 
 -- --------------------------------------------------------
 
@@ -166,13 +159,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `product`
