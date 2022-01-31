@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>BANNER</title>
+    <title>BLOG</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -175,66 +175,78 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="row"> 
-                            <?php 
-                                $editid = isset($_REQUEST['EditId']) ? $_REQUEST['EditId'] : '';
-                                $hiddenname = $editid ? 'editbanner' : 'insertbanner';
+                    <?php 
+                        $editid = isset($_REQUEST['EditId']) ? $_REQUEST['EditId'] : '';
+                        $hiddenname = $editid ? 'editblog' : 'insertblog';
 
-                                if(isset($_REQUEST['EditId'])){
-                                    $display="SELECT * FROM banner WHERE id='$editid'";
-                                    $displayresult = $conn->query($display);
-                                    $displayrow = $displayresult->fetch_assoc();
-                                    //echo '<pre>'; print_r($displayrow); exit;
+                        if(isset($_REQUEST['EditId'])){
+                            $display="SELECT * FROM  blog WHERE id='$editid'";
+                            $displayresult = $conn->query($display);
+                            $displayrow = $displayresult->fetch_assoc();
+                            //echo '<pre>'; print_r($displayrow); exit;
 
-                                    $slidertitle = isset($displayrow['slidertitel']) ? $displayrow['slidertitel'] : '';
-                                    $sliderimg = isset($displayrow['sliderimg']) ? $displayrow['sliderimg'] : '';
-                                } 
-                                else{
-                                    $slidertitle = '';
-                                    $sliderimg = '';
-                                }
-                            ?> 
+                            $blogtitle = isset($displayrow['blogtitle']) ? $displayrow['blogtitle'] : '';
+                            $blogdiscription = isset($displayrow['blogdescription']) ? $displayrow['blogdescription'] : '';
+                            $blogimg = isset($displayrow['blogimg']) ? $displayrow['blogimg'] : '';
+                        } 
+                        else{
+                            $blogtitle = '';
+                            $blogdiscription = '';
+                            $blogimg = '';
+                        }
+                    ?> 
                         <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-header" style="background-color:black; color:white;">
-                                                    <strong>ADD Banner</strong>
+                                                    <strong>ADD Blog</strong>
                                         </div>
                                         <div class="card-body card-block">
-                                            <form action="banneraction.php" method="post" name="bannerform" enctype="multipart/form-data" class="form-horizontal">                    
-                                                        <div class="row form-group">
-                                                            <div class="col col-md-3">
-                                                                <label for="text-input" class=" form-control-label">Slider Titlte</label>
-                                                            </div>
-                                                            <div class="col-12 col-md-9">
-                                                                <input type="text" id="slidertitle" name="slidertitle" placeholder="slider title" class="form-control" value="<?php echo $slidertitle; ?>">         
-                                                            </div>
-                                                        </div>
-                                                        <div class="row form-group">
-                                                            <div class="col col-md-3">
-                                                                <label for="file-input" class=" form-control-label">Upload IMG</label>
-                                                            </div>
-                                                            <div class="col-12 col-md-9">
-                                                                <input type="file" id="fileUpload" name="fileUpload" class="form-control-file">
-                                                                <?php if(isset($_REQUEST['EditId'])){ ?>
-                                                                    <img src="<?php echo $sliderimg; ?>" width="50" height="50">
-                                                                <?php } ?>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <input type="hidden"  name="<?php echo $hiddenname; ?>" value="<?php echo  $editid; ?>">
-                                                            <button type="submit" name="submit" class="btn btn-primary btn-sm">
-                                                                <i class="fa fa-dot-circle-o"></i> Submit
-                                                            </button>
-                                                            <button type="reset" class="btn btn-danger btn-sm">
-                                                                <i class="fa fa-ban"></i> Reset
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                        <form action="blogaction.php" method="post" name="blogform" enctype="multipart/form-data" class="form-horizontal">                    
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Blog Title</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="blogtitle" name="blogtitle" placeholder="Blog Title" class="form-control" value="<?php echo $blogtitle; ?>">         
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">Blog Discription</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="blogdiscription" id="editor" rows="6" placeholder="Enter Blog Discription" class="form-control"><?php echo $blogdiscription; ?></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Upload IMG</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="blogimg" name="blogimg" class="form-control-file">
+                                                    <?php if(isset($_REQUEST['EditId'])){ ?>
+                                                        <img src="<?php echo $blogimg; ?>" width="50" height="50">
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <input type="hidden"  name="<?php echo $hiddenname; ?>" value="<?php echo  $editid; ?>">
+                                                <button type="submit" name="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+                                                <button type="reset" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-ban"></i> Reset
+                                                </button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                         </div>
                         <?php                
-                            $seletBanner = "SELECT *FROM banner";
-                            $result = $conn->query($seletBanner);
+                                $seletBlog = "SELECT *FROM blog";
+                                $result = $conn->query($seletBlog);
                         ?>
                         <div class="col-lg-12">
                                 <div class="table-responsive table--no-card m-b-30">
@@ -242,22 +254,24 @@
                                         <thead>
                                             <tr>
                                             <th>ID</th>
-                                                <th>Titlte</th>
-                                                <th>Banner</th>
-                                                <th>Action</th>
+                                            <th>Blog Title</th>
+                                            <!-- <th>Blog Discription</th> -->
+                                            <th>Blog Image</th>
+                                            <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php while ($row = $result->fetch_assoc()){ ?>
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo $row['slidertitel']; ?></td>
+                                                <td><?php echo $row['blogtitle']; ?></td>
+                                                <!-- <td><?php echo $row['blogdiscription']; ?></td> -->
                                                 <td>
-                                                    <img src="<?php echo $row['sliderimg']; ?>" width="50" height="50">
+                                                    <img src="<?php echo $row['blogimg']; ?>" width="50" height="50">
                                                 </td>
                                                 <td>
-                                                    <a href="banner.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
-                                                    <a href="banneraction.php?BannerdeletId=<?php echo $row['id']; ?>&DeleteImg=<?php echo $row['sliderimg']; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                                    <a href="blog.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
+                                                    <a href="blogaction.php?BlogdeletId=<?php echo $row['id']; ?>&DeleteImg=<?php echo $row['blogimg']; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                                 </td>
                                                 
                                             </tr>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>BANNER</title>
+    <title>PRODUCT</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -175,66 +175,87 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="row"> 
-                            <?php 
+                    <?php 
                                 $editid = isset($_REQUEST['EditId']) ? $_REQUEST['EditId'] : '';
-                                $hiddenname = $editid ? 'editbanner' : 'insertbanner';
+                                $hiddenname = $editid ? 'editproduct' : 'insertproduct';
 
                                 if(isset($_REQUEST['EditId'])){
-                                    $display="SELECT * FROM banner WHERE id='$editid'";
+                                    $display="SELECT * FROM product WHERE id='$editid'";
                                     $displayresult = $conn->query($display);
                                     $displayrow = $displayresult->fetch_assoc();
                                     //echo '<pre>'; print_r($displayrow); exit;
 
-                                    $slidertitle = isset($displayrow['slidertitel']) ? $displayrow['slidertitel'] : '';
-                                    $sliderimg = isset($displayrow['sliderimg']) ? $displayrow['sliderimg'] : '';
+                                    $productname = isset($displayrow['productname']) ? $displayrow['productname'] : '';
+                                    $price = isset($displayrow['price']) ? $displayrow['price'] : '';
+                                    $productdiscription = isset($displayrow['discription']) ? $displayrow['discription'] : '';
+                                    $productimg = isset($displayrow['productimg']) ? $displayrow['productimg'] : '';
                                 } 
                                 else{
-                                    $slidertitle = '';
-                                    $sliderimg = '';
+                                    $productname = '';
+                                    $price = '';
+                                    $productdiscription = '';
+                                    $productimg = '';
                                 }
                             ?> 
                         <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-header" style="background-color:black; color:white;">
-                                                    <strong>ADD Banner</strong>
+                                                    <strong>ADD Product</strong>
                                         </div>
                                         <div class="card-body card-block">
-                                            <form action="banneraction.php" method="post" name="bannerform" enctype="multipart/form-data" class="form-horizontal">                    
-                                                        <div class="row form-group">
-                                                            <div class="col col-md-3">
-                                                                <label for="text-input" class=" form-control-label">Slider Titlte</label>
-                                                            </div>
-                                                            <div class="col-12 col-md-9">
-                                                                <input type="text" id="slidertitle" name="slidertitle" placeholder="slider title" class="form-control" value="<?php echo $slidertitle; ?>">         
-                                                            </div>
-                                                        </div>
-                                                        <div class="row form-group">
-                                                            <div class="col col-md-3">
-                                                                <label for="file-input" class=" form-control-label">Upload IMG</label>
-                                                            </div>
-                                                            <div class="col-12 col-md-9">
-                                                                <input type="file" id="fileUpload" name="fileUpload" class="form-control-file">
-                                                                <?php if(isset($_REQUEST['EditId'])){ ?>
-                                                                    <img src="<?php echo $sliderimg; ?>" width="50" height="50">
-                                                                <?php } ?>
-                                                            </div>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <input type="hidden"  name="<?php echo $hiddenname; ?>" value="<?php echo  $editid; ?>">
-                                                            <button type="submit" name="submit" class="btn btn-primary btn-sm">
-                                                                <i class="fa fa-dot-circle-o"></i> Submit
-                                                            </button>
-                                                            <button type="reset" class="btn btn-danger btn-sm">
-                                                                <i class="fa fa-ban"></i> Reset
-                                                            </button>
-                                                        </div>
-                                                    </form>
+                                        <form action="productaction.php" method="post" name="productform" enctype="multipart/form-data" class="form-horizontal">                    
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Product Name</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="productname" name="productname" placeholder="Product Name" class="form-control" value="<?php echo $productname; ?>">         
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Price</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="price" name="price" placeholder="Product Price" class="form-control" value="<?php echo $price; ?>">         
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">Product Discription</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="productdiscription" id="editor" rows="6" placeholder="Enter Product Discription" class="form-control"><?php echo $productdiscription; ?></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Upload IMG</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="productimg" name="productimg" class="form-control-file">
+                                                    <?php if(isset($_REQUEST['EditId'])){ ?>
+                                                        <img src="<?php echo $productimg; ?>" width="50" height="50">
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <input type="hidden"  name="<?php echo $hiddenname; ?>" value="<?php echo  $editid; ?>">
+                                                <button type="submit" name="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+                                                <button type="reset" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-ban"></i> Reset
+                                                </button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                         </div>
                         <?php                
-                            $seletBanner = "SELECT *FROM banner";
-                            $result = $conn->query($seletBanner);
+                                $seletProduct = "SELECT *FROM product";
+                                $result = $conn->query($seletProduct);
                         ?>
                         <div class="col-lg-12">
                                 <div class="table-responsive table--no-card m-b-30">
@@ -242,22 +263,26 @@
                                         <thead>
                                             <tr>
                                             <th>ID</th>
-                                                <th>Titlte</th>
-                                                <th>Banner</th>
-                                                <th>Action</th>
+                                            <th>ProductName</th>
+                                            <th>Price</th>
+                                            <!-- <th>Discription</th> -->
+                                            <th>Product images</th>
+                                            <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php while ($row = $result->fetch_assoc()){ ?>
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
-                                                <td><?php echo $row['slidertitel']; ?></td>
+                                                <td><?php echo $row['productname']; ?></td>
+                                                <td><?php echo $row['price']; ?></td>
+                                                <!-- <td><?php //echo $row['discription']; ?></td> -->
                                                 <td>
-                                                    <img src="<?php echo $row['sliderimg']; ?>" width="50" height="50">
+                                                    <img src="<?php echo $row['productimg']; ?>" width="50" height="50">
                                                 </td>
                                                 <td>
-                                                    <a href="banner.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
-                                                    <a href="banneraction.php?BannerdeletId=<?php echo $row['id']; ?>&DeleteImg=<?php echo $row['sliderimg']; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+                                                    <a href="product.php?EditId=<?php echo $row['id']; ?>">Edit</a> | 
+                                                    <a href="productaction.php?ProductdeletId=<?php echo $row['id']; ?>&DeleteImg=<?php echo $row['productimg']; ?>" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
                                                 </td>
                                                 
                                             </tr>

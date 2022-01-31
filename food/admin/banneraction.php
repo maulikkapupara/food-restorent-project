@@ -37,28 +37,7 @@ if(isset($_REQUEST['BannerdeletId'])){
 
 /**********************UPDATE Action**************************************/ 
 //echo "<pre>"; print_r($_POST); exit;
-// if(isset($_POST['submit']) && isset($_POST['editbanner'])){
-
-// 	$sldid =$_REQUEST['editbanner'];
-// 	$sldtitle = $_POST['slidertitle'];
-	
-// 	$sldimg = $_FILES['fileUpload']['name'];
-	
-// 	$target = "upload/".basename($sldimg);
-// 	$sldimg_temp=$_FILES['fileUpload']['tmp_name'];
-
-// 	if($sldimg_temp != ""){
-// 	    move_uploaded_file($sldimg_temp , $target);
-// 	    $updatebanner = "UPDATE banner SET slidertitle='$sldtitle',sliderimg='$target', WHERE id='$sldid'";   
-// 	}else{
-//    	 	$updatebanner="UPDATE banner SET slidertitle='$sldtitle' WHERE id='$sldid'"; 
-// 	}
-// 	$conn->query($updatebanner);
-// 	header("location:banner.php");
-//  }
- if(isset($_POST['submit']) && isset($_POST['editbanner'])){
-
-	//echo "<pre>"; print_r($_POST); exit;
+if(isset($_POST['submit']) && isset($_POST['editbanner'])){
 
 	$sldid =$_REQUEST['editbanner'];
 	$sldtitle = $_POST['slidertitle'];
@@ -70,9 +49,9 @@ if(isset($_REQUEST['BannerdeletId'])){
 
 	if($sldimg_temp != ""){
 	    move_uploaded_file($sldimg_temp , $target);
-	    $updatebanner = "UPDATE banner SET slidertitle='$sldtitle',sliderimg='$target', WHERE id='$sldid'";
+	    $updatebanner = "UPDATE banner SET slidertitel = '$sldtitle', sliderimg = '$target' WHERE id='$sldid'";   
 	}else{
-		$updatebanner="UPDATE banner SET slidertitle='$sldtitle' WHERE id='$sldid'"; 
+   	 	$updatebanner="UPDATE banner SET slidertitel='$sldtitle' WHERE id='$sldid'"; 
 	}
 	$conn->query($updatebanner);
 	header("location:banner.php");

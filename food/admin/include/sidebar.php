@@ -10,11 +10,11 @@
                                 <i class="fas fa-sliders"></i>BANNER</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="product.php">
                                 <i class="fas fa-shopping-cart"></i>PRODUCTS</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="blog.php">
                                 <i class="fas fa-calendar-alt"></i>BLOG</a>
                         </li>
                         <li>
