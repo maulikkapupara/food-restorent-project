@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2022 at 09:14 PM
+-- Generation Time: Feb 01, 2022 at 11:42 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -77,6 +77,13 @@ CREATE TABLE `blog` (
   `create_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`id`, `blogtitle`, `blogdescription`, `blogimg`, `create_date`) VALUES
+(1, 'testing purpose ', 'this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.', 'upload/blog/pani puri.webp', '2022-02-01');
+
 -- --------------------------------------------------------
 
 --
@@ -96,7 +103,18 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `productname`, `discription`, `price`, `productimg`) VALUES
-(2, 'abcd', 'djbjsdjvfugsegfjsgjfgjsgduyjgdj', 20, 'upload/product/Badam.jpg');
+(2, 'panipuri', 'Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.', 20, 'upload/product/pani puri.webp'),
+(3, 'Aloo Tikki ', 'Aloo tikki is a popular Indian street food snack made with boiled potatoes, aromatic spices and herbs. Aloo is the Hindi name for potatoes and tikki is a patty. So aloo tikki literally translates to potato patties. These Indian style potato patties are delicious, crisp and flavorful as a good amount of spices and herbs are used. They are eaten as a snack.', 50, 'upload/product/aloo-tikki.jpg'),
+(4, 'Sev Puri', 'Sev puri recipe is a canape like snack – where crispy fried flour discs are topped with flavorful condiments, veggies, herbs, ground spices and more. Spicy, sweet, tangy, savory, salty, crunchy flavors – all bursting in your mouth in each bite. Learn to make this evergreen popular chaat snack with my authentic Mumbai style recipe. ', 30, 'upload/product/sev-puri.jpg'),
+(5, 'Bhel Puri ', 'Bhel Puri is a very popular Mumbai street food snack made with puffed rice, puri, boiled potatoes, onions, various chutneys, herbs, ground spices and sev (fried gram flour vermicelli). This dish is easy to make at home. It is a tasty snack having a lot of flavors and textures – sour, tangy, crispy, sweet, salty, crunchy. This bhel recipe comes together in under 45 minutes with three real quick chutney recipes.', 40, 'upload/product/Bhel-Puri.jpg'),
+(6, 'Samosa', 'A samosa is a fried or baked pastry with a savory filling, including ingredients such as spiced potatoes, onions, peas, chicken and/or other meats. It may take different forms, including triangular, cone, or half-moon shapes, depending on the region', 20, 'upload/product/somaso.jpg'),
+(7, 'Vada Pav', 'Vada pav, alternatively spelt wada pao, ( listen) is a vegetarian fast food dish native to the state of Maharashtra. The dish consists of a deep fried potato dumpling placed inside a bread bun (pav) sliced almost in half through the middle. It is generally accompanied with one or more chutneys and a green chili pepper.', 30, 'upload/product/Vada Pav.jpg'),
+(8, 'Dabeli', 'Dabeli, kutchi dabeli or double roti is a popular snack food of India, originating in the Kutch or Kachchh region of Gujarat. It is a sweet snack made by mixing boiled potatoes with a special dabeli masala, putting the mixture in a ladi pav (burger bun), and serving it with chutneys made from tamarind, date, garlic, red chilies and other ingredients. It is garnished with pomegranate and roasted peanuts.', 30, 'upload/product/Dabeli.jpg'),
+(9, 'Bread Pakoda', 'Bread pakoda is an Indian fried snack (pakoda or fritter). It is also known as bread bhaji . A common street food, it is made from bread slices, gram flour, and spices among other ingredients.', 20, 'upload/product/bread-pakoda-.jpg'),
+(10, 'Pav Bhaji ', 'Pav bhaji (Marathi : पाव भाजी) is a fast food dish from India consisting of a thick vegetable curry (bhaji) served with a soft bread roll (pav). Its origins are in the state of Maharashtra.', 80, 'upload/product/Pav-Bhaji.jpg'),
+(11, 'Dosa ', 'A dosa is a thin pancake or crepe originating from South India, made from a fermented batter predominantly consisting of lentils and rice. ... Its main ingredients are rice and black gram, ground together in a fine, smooth batter with a dash of salt, then fermented.', 80, 'upload/product/Dosa.jpg'),
+(12, 'Manchurian ', 'Manchurian is a class of Indian Chinese dishes made by roughly chopping and deep-frying ingredient such as chicken, cauliflower (gobi), prawns, fish, mutton, and paneer, and then sautéeing it in a sauce flavored with soy sauce. ... It has become a staple of Indian Chinese cuisine.', 120, 'upload/product/Manchurian.jpeg'),
+(13, 'Burger ', 'A hamburger (or burger for short) is a food, typically considered a sandwich, consisting of one or more cooked patties—usually ground meat, typically beef—placed inside a sliced bread roll or bun. The patty may be pan fried, grilled, smoked or flame broiled. ... A hamburger topped with cheese is called a cheeseburger.', 50, 'upload/product/Burger.jpg');
 
 -- --------------------------------------------------------
 
@@ -165,13 +183,13 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `users`
