@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php include ("include/config.php"); ?>
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,25 +48,11 @@
 	<?php include('header.php'); ?>
 	<!-- end header -->
 
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end search arewa -->
-	
+	<?php                
+			$seletCategory = "SELECT * FROM product where id ='".$_GET['id']."'";
+			$result = $conn->query($seletCategory);
+			$row = $result->fetch_assoc()
+	?>
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -72,7 +60,7 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>See more Details</p>
-						<h1>Single Product</h1>
+						<h1><?php echo $row['productname'];?></h1>
 					</div>
 				</div>
 			</div>
@@ -86,14 +74,14 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<img src="assets/img/products/product-img-5.jpg" alt="">
+						<img src="Admin/<?php echo $row['productimg'];?>" alt="">
 					</div>
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3>Green apples have polyphenols</h3>
-						<p class="single-product-pricing"><span>Per Kg</span> $50</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
+						<h3><?php echo $row['productname'];?></h3>
+						<p class="single-product-pricing"><span>Per Dish</span>₹<?php echo $row['price'];?></p>
+						<p><?php echo $row['discription'];?></p>
 						<div class="single-product-form">
 							<form action="index.php">
 								<input type="number" placeholder="0">
@@ -128,35 +116,21 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-4 col-md-6 text-center">
+				<?php                
+						$seletProduct = "SELECT *FROM product ORDER BY RAND() limit 3";
+						$result = $conn->query($seletProduct);
+						while ($row = $result->fetch_assoc()){
+				?>
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+							<a href="single-product.php?id=<?php echo $row['id'];?>"><img src="Admin/<?php echo $row['productimg'];?>"alt=""></a>
 						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
+						<h3><?php echo $row['productname'];?></h3>
+						<p class="product-price"><span>Per Dish</span>₹<?php echo $row['price'];?></p>
 						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.php"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</div>

@@ -36,14 +36,7 @@
 									
 								</li>
 								<li><a href="contact.php">Contact</a></li>
-								<li><a href="shop.php">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.php">Shop</a></li>
-										<li><a href="checkout.php">Check Out</a></li>
-										<li><a href="single-product.php">Single Product</a></li>
-										<li><a href="cart.php">Cart</a></li>
-									</ul>
-								</li>
+								<li><a href="shop.php">Shop</a></li>
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
