@@ -115,12 +115,12 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
 				<?php                
 						$seletProduct = "SELECT *FROM product ORDER BY RAND() limit 3";
 						$result = $conn->query($seletProduct);
 						while ($row = $result->fetch_assoc()){
 				?>
+				<div class="col-lg-4 col-md-6 text-center">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.php?id=<?php echo $row['id'];?>"><img src="Admin/<?php echo $row['productimg'];?>"alt=""></a>
