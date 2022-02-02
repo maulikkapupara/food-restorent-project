@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2022 at 11:42 PM
+-- Generation Time: Feb 02, 2022 at 01:26 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -82,7 +82,9 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`id`, `blogtitle`, `blogdescription`, `blogimg`, `create_date`) VALUES
-(1, 'testing purpose ', 'this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.', 'upload/blog/pani puri.webp', '2022-02-01');
+(1, 'testing purpose ', 'this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.this is  a testing purpose blog.', 'upload/blog/pani puri.webp', '2022-02-01'),
+(2, 'this is second blog', 'Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.Gol gappa (also known as pani puri) is a popular bite-size chaat consisting of a hollow, crispy-fried puffed ball that is filled with potato, chickpeas, onions, spices, and flavoured water, usually tamarind or mint, and popped into one’s mouth whole.', 'upload/blog/Bhel-Puri.jpg', '2022-02-02'),
+(3, 'jfsfhgsdjfhsjdfhg', 'testing testing', 'upload/blog/Dosa.jpg', '2022-02-02');
 
 -- --------------------------------------------------------
 
@@ -183,7 +185,7 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product`
