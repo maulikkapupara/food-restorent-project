@@ -37,11 +37,11 @@
 <body>
 	
 	<!--PreLoader-->
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="loader-inner">
             <div class="circle"></div>
         </div>
-    </div>
+    </div> -->
     <!--PreLoader Ends-->
 	
 	<!-- header -->
@@ -154,17 +154,19 @@
 				?>
 				<div class="col-lg-4 col-md-6">
 					<div class="single-latest-news">
-						<div class="latest-news-bg news-bg-1">
-							<a href="single-news.php"></a>
+						<div class="latest-news-bg">
+							<a href="single-news.php?id=<?php echo $row['id'];?>"><img src="Admin/<?php echo $row['blogimg'];?>"></a>
 						</div>
 						<div class="news-text-box">
-							<h3><a href="single-news.php">You will vainly look for fruit on it in autumn.</a></h3>
+							<h3></br><a href="single-news.php?id=<?php echo $row['id'];?>"><?php echo $row['blogtitle'];?></a></h3>
 							<p class="blog-meta">
-								<span class="author"><i class="fas fa-user"></i> Admin</span>
-								<span class="date"><i class="fas fa-calendar"></i> 27 December, 2019</span>
+								<?php
+                                    $date=date_create($row['create_date']);
+                                ?>
+								<span class="date"><i class="fas fa-calendar"></i><?php echo date_format($date,"d/m/Y "); ?></span>
 							</p>
-							<p class="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-							<a href="single-news.php" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
+							<p class="excerpt"><?php echo substr($row['blogdescription'], 0,150);?>.......</p>
+							<a href="single-news.php?id=<?php echo $row['id'];?>" class="read-more-btn">read more <i class="fas fa-angle-right"></i></a>
 						</div>
 					</div>
 				</div>

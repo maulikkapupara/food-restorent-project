@@ -6,11 +6,11 @@ include ("include/config.php");
 if(isset($_POST['submit']) && isset($_POST['insertblog'])){
 
 	$blogtitle = $_POST['blogtitle'];
-	$blogdiscription = $_POST['blogdiscription'];
+	$blogdescription = $_POST['blogdescription'];
 	$blogimg = $_FILES['blogimg']['name'];
 	$target = "upload/blog/".basename($blogimg);
 	$date = date('Y-m-d');
-  	$sql = "INSERT INTO blog (blogtitle,blogdescription,blogimg,create_date) VALUES ('$blogtitle','$blogdiscription','$target','$date')";
+  	$sql = "INSERT INTO blog (blogtitle,blogdescription,blogimg,create_date) VALUES ('$blogtitle','$blogdescription','$target','$date')";
   	$conn->query($sql);
 
   	if (move_uploaded_file($_FILES['blogimg']['tmp_name'], $target)) {
@@ -39,12 +39,12 @@ if(isset($_REQUEST['BlogdeletId'])){
 
 if(isset($_POST['submit']) && isset($_POST['editblog'])){
 
-	//	echo "<pre>"; print_r($_POST); exit;
+		//echo "<pre>"; print_r($_POST); exit;
 
 	$blogid =$_REQUEST['editblog'];
 
 	$blogtitle = $_POST['blogtitle'];
-	$blogdiscription = $_POST['blogdiscription'];
+	$blogdescription = $_POST['blogdescription'];
 
 	$blogimg = $_FILES['blogimg']['name'];
 	
@@ -53,9 +53,9 @@ if(isset($_POST['submit']) && isset($_POST['editblog'])){
 
 	if($blogimg_temp != ""){
 	    move_uploaded_file($blogimg_temp , $target);
-	    $updateblog = "UPDATE blog SET blogtitle='$blogtitle',blogdescription='$blogdiscription', blogimg='$target' WHERE id='$blogid'";   
+	    $updateblog = "UPDATE blog SET blogtitle='$blogtitle',blogdescription='$blogdescription', blogimg='$target' WHERE id='$blogid'";  
 	}else{
-   	 	$updateblog="UPDATE blog SET blogtitle='$blogtitle' WHERE id='$blogid'"; 
+   	 	$updateblog="UPDATE blog SET blogtitle='$blogtitle',blogdescription='$blogdescription' WHERE id='$blogid'";  
 	}
 	$conn->query($updateblog);
 	header("location:blog.php");

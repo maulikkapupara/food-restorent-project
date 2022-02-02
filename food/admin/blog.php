@@ -186,12 +186,12 @@
                             //echo '<pre>'; print_r($displayrow); exit;
 
                             $blogtitle = isset($displayrow['blogtitle']) ? $displayrow['blogtitle'] : '';
-                            $blogdiscription = isset($displayrow['blogdescription']) ? $displayrow['blogdescription'] : '';
+                            $blogdescription = isset($displayrow['blogdescription']) ? $displayrow['blogdescription'] : '';
                             $blogimg = isset($displayrow['blogimg']) ? $displayrow['blogimg'] : '';
                         } 
                         else{
                             $blogtitle = '';
-                            $blogdiscription = '';
+                            $blogdescription = '';
                             $blogimg = '';
                         }
                     ?> 
@@ -216,7 +216,7 @@
                                                     <label for="email-input" class=" form-control-label">Blog Discription</label>
                                                 </div>
                                                 <div class="col-12 col-md-9">
-                                                    <textarea name="blogdiscription" id="editor" rows="6" placeholder="Enter Blog Discription" class="form-control"><?php echo $blogdiscription; ?></textarea>
+                                                    <textarea name="blogdescription" id="editor" rows="6" placeholder="Enter Blog Discription" class="form-control"><?php echo $blogdescription; ?></textarea>
                                                 </div>
                                             </div>
 
@@ -265,7 +265,7 @@
                                             <tr>
                                                 <td><?php echo $row['id']; ?></td>
                                                 <td><?php echo $row['blogtitle']; ?></td>
-                                                <!-- <td><?php echo $row['blogdiscription']; ?></td> -->
+                                                <!-- <td><?php echo $row['blogdescription']; ?></td> -->
                                                 <td>
                                                     <img src="<?php echo $row['blogimg']; ?>" width="50" height="50">
                                                 </td>
