@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2022 at 01:26 AM
+-- Generation Time: Feb 04, 2022 at 02:17 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -89,6 +89,30 @@ INSERT INTO `blog` (`id`, `blogtitle`, `blogdescription`, `blogimg`, `create_dat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart_item`
+--
+
+CREATE TABLE `cart_item` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `pro_id` int(11) NOT NULL,
+  `pro_img` varchar(255) NOT NULL,
+  `pro_name` varchar(255) NOT NULL,
+  `pro_price` varchar(255) NOT NULL,
+  `pro_qty` varchar(255) NOT NULL,
+  `total` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart_item`
+--
+
+INSERT INTO `cart_item` (`id`, `user_id`, `pro_id`, `pro_img`, `pro_name`, `pro_price`, `pro_qty`, `total`) VALUES
+(1, 1, 8, 'upload/product/Dabeli.jpg', 'Dabeli', '', '1', '0');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
@@ -132,6 +156,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
+(1, 'maulik', 'maulikkapupara2805@email.com', '123'),
+(2, 'abcd', 'abc@gmail.com', 'ancd');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -151,6 +183,12 @@ ALTER TABLE `banner`
 -- Indexes for table `blog`
 --
 ALTER TABLE `blog`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `cart_item`
+--
+ALTER TABLE `cart_item`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -188,6 +226,12 @@ ALTER TABLE `blog`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `cart_item`
+--
+ALTER TABLE `cart_item`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
@@ -197,7 +241,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
