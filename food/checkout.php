@@ -1,3 +1,10 @@
+<?php
+// session_start();
+include 'include/config.php';
+include('header.php');
+if(isset($_SESSION['em']))
+{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +50,7 @@
     <!--PreLoader Ends-->
 	
 	<!-- header -->
-	<?php include('header.php'); ?>
+	<?php //include('header.php'); ?>
 	<!-- end header -->
 
 	<!-- search area -->
@@ -277,3 +284,11 @@
 
 </body>
 </html>
+<?php
+}
+else
+{
+	$ok = $_SERVER['PHP_SELF'];
+	header('location:login.php?.$ok.');
+}
+?>

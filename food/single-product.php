@@ -79,23 +79,30 @@
 				</div>
 				<div class="col-md-7">
 					<div class="single-product-content">
-						<h3><?php echo $row['productname'];?></h3>
-						<p class="single-product-pricing"><span>Per Dish</span>₹<?php echo $row['price'];?></p>
-						<p><?php echo $row['discription'];?></p>
-						<div class="single-product-form">
-							<form action="index.php">
-								<input type="number" placeholder="0">
-							</form>
-							<a href="cart.php" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-							<p><strong>Categories: </strong>Fruits, Organic</p>
-						</div>
-						<h4>Share:</h4>
-						<ul class="product-share">
-							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href=""><i class="fab fa-twitter"></i></a></li>
-							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
-						</ul>
+						<form action="cartaction.php" method="post" >
+							<h3><?php echo $row['productname'];?></h3>
+							<p class="single-product-pricing"><span>Per Dish</span>₹<?php echo $row['price'];?></p>
+							<p><?php echo $row['discription'];?></p>
+							<div class="single-product-form">
+								<div>
+									<input  type="number" name="qtys" value="1">
+								</div>
+								<input type="hidden" name="pid" value="<?php echo $row['id']; ?>">
+								<input type="hidden" name="productname" value="<?php echo $row['productname']; ?>">
+								<input type="hidden" name="productimg" value="<?php echo $row['productimg'];?>">
+								<input type="hidden" name="price" value="<?php echo $row['price'];?>">
+
+								<input type="submit" name="submit" value="add to cart" class="cart-btn">
+								<p><strong>Categories: </strong>Fruits, Organic</p>
+							</div>
+							<h4>Share:</h4>
+							<ul class="product-share">
+								<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+								<li><a href=""><i class="fab fa-twitter"></i></a></li>
+								<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+								<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+							</ul>
+						</form>
 					</div>
 				</div>
 			</div>

@@ -1,8 +1,6 @@
 <?php include ("include/config.php"); ?>
 <?php
 session_start();
-if(isset($_SESSION['em']))
-{
     $userid=$_SESSION['userid'];
     $pid = $_POST['pid'];
     $pimg = $_POST['productimg'];
@@ -44,14 +42,4 @@ if(isset($_SESSION['em']))
       echo "error";
     }
 ?>
-<?php
-}
-else
-{
-// echo "string";
-    header("location:login.php");
 
-?>
-<?php
-}
-?>

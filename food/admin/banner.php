@@ -1,3 +1,7 @@
+<?php
+if(isset($_SESSION['$em']))
+{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include("include/config.php"); ?>
@@ -303,3 +307,9 @@
 
 </html>
 <!-- end document-->
+<?php
+}
+else{
+    header("location:index.php");
+}
+?>

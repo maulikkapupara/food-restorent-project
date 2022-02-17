@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <div class="top-header-area" id="sticker">
 		<div class="container">
 			<div class="row">
@@ -27,8 +31,17 @@
 								<li>
 									<div class="header-icons">
 										<a class="shopping-cart" href="cart.php"><i class="fas fa-shopping-cart"></i></a>
-										<a class="login-registre" href="login.php"><i class="fas fa-user-circle fa-lg"></i></a>
-										<a class="logout" href="login.php"><i class="fas fa-power-off fa-lg"></i></a>
+										<?php 
+                                        if(isset($_SESSION['em']))
+                                        {
+                                    ?>
+                                    
+                                        <a title="logout" href="logout.php"><i  class="fas fa-power-off fa-lg"></i></a>
+                                    <?php }else{ ?>
+                                    <a title="Login Register" href="login.php"><i class="fas fa-user-circle fa-lg"></i></a>
+                                    <?php } ?>
+										<!-- <a class="login-registre" href="login.php"><i class="fas fa-user-circle fa-lg"></i></a> -->
+										<!-- <a class="logout" href="#"><i class="fas fa-power-off fa-lg"></i></a> -->
 									</div>
 								</li>
 							</ul>

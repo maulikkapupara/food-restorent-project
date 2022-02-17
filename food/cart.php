@@ -1,3 +1,11 @@
+<?php
+// session_start();
+include 'include/config.php';
+include('header.php');
+if(isset($_SESSION['em']))
+{
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include ("include/config.php"); ?>
@@ -33,6 +41,18 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
+<script>
+function test()
+{
+	var qt,tot,total;
+	qt = document.getElementById('qt').value;
+	tot = document.getElementById('tot').value;
+	total = qt*tot;
+	// alert(qt);
+	alert(total);
+
+}
+</script>
 <body>
 	
 	<!--PreLoader-->
@@ -44,7 +64,7 @@
     <!--PreLoader Ends-->
 	
 	<!-- header -->
-	<?php include('header.php'); ?>
+	<?php //include('header.php'); ?>
 	<!-- end header -->
 
 	<!-- breadcrumb-section -->
@@ -66,31 +86,64 @@
 	<div class="cart-section mt-150 mb-150">
 		<div class="container">
 			<div class="row">
-							
+				<?php
+					$userid=$_SESSION['userid'];
+					$test=mysqli_query($con,"select * from cart_item where user_id='$userid'");
+					$tes=mysqli_fetch_assoc($test);
+					if($tes>0)
+					{
+				?>
+				
 				<div class="col-lg-8 col-md-12">
 					<div class="cart-table-wrap">
-						<table class="cart-table">
-							<thead class="cart-table-head">
-								<tr class="table-head-row">
-									<th class="product-remove"></th>
-									<th class="product-image">Product Image</th>
-									<th class="product-name">Name</th>
-									<th class="product-price">Price</th>
-									<th class="product-quantity">Quantity</th>
-									<th class="product-total">Total</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="image code" alt=""></td>
-									<td class="product-name">product name</td>
-									<td class="product-price">₹price</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									<td class="product-total">1</td>
-								</tr>
-							</tbody>
-						</table>
+						<form action="cartaction.php" method="post" >
+							<table class="cart-table">
+								<thead class="cart-table-head">
+									<tr class="table-head-row">
+										
+										<th class="product-image">Product Image</th>
+										<th class="product-name">Name</th>
+										<th class="product-price">Price</th>
+										<th class="product-quantity">Quantity</th>
+										<th class="product-total">Sub Total</th>
+										<th class="product-remove"></th>
+									</tr>
+								</thead>
+								<tfoot>
+									<tr>
+										<td colspan="7">
+										<div class="cart-buttons">
+											<a href="shop.php" class="boxed-btn">continue shopping</a>
+											<input type="submit" name="update" onClick="test()"; value="update cart" class="cart-btn" style="margin-left:358px;">	
+										</div>
+										<div>
+											
+										</div>
+										</td>
+									</tr>
+								</tfoot>
+								<tbody>
+									<?php
+										$userid=$_SESSION['userid'];
+
+										$test = mysqli_query($con,"select * from cart_item where user_id='$userid'");
+										//$tes = mysqli_fetch_array($test);
+										while ($row=mysqli_fetch_array($test)) {
+									?>
+									<tr class="table-body-row">
+										<td class="product-image"><img src="Admin/<?php echo $row['pro_img']; ?>" alt=""></td>
+										<td class="product-name" name="pnm"><?php echo $row['pro_name']; ?></td>
+										<input type="hidden" name="pid" value="<?php echo $row['pro_id']; ?>">
+										<td class="product-price" name="pric">₹<?php echo $row['pro_price']; ?></td>
+										<td class="product-quantity" name="qty"><input type="number"  id="qt" placeholder="<?php echo $row['pro_qty'];?>" min="1"></td>
+										<td class="product-total" ><?php echo $row['total'];?><input type="hidden"  id="tot" value="<?php echo $row['total'];?>"></td>
+										<td class="product-remove"><a href="cartdelete.php?id=<?php echo $row['id']; ?>	" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash fa-lg" style="color:#e64940"></i></a></td>
+									
+									</tr>
+									<?php } ?>
+								</tbody>
+							</table>
+						</form>
 					</div>
 				</div>
 
@@ -104,29 +157,48 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
-								<tr class="total-data">
+							<?php
+                                    $userid=$_SESSION['userid'];
+                                    
+                                    $test = mysqli_query($con,"select * from cart_item where user_id='$userid'");
+                                    $tes = 0;
+                                    while ($row=mysqli_fetch_array($test)) {
+                                        $tes+=$row['total'];
+                                    }
+                                ?>
+								
+								<!-- <tr class="total-data">
 									<td><strong>Shipping: </strong></td>
 									<td>$45</td>
-								</tr>
+								</tr> -->
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>$545</td>
+									<td>₹<?php echo $tes; ?></td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							<a href="cart.php" class="boxed-btn">Update Cart</a>
 							<a href="checkout.php" class="boxed-btn black">Check Out</a>
 						</div>
 
 					</div>
 				</div>
 				
+			<?php
+				} else {
+			?>
+		
+        <h1 style="text-align: center; padding-left:180px;">Your cart is currently empty.</h1>
+		
+				<div class="cart-buttons">
+					<a  href="shop.php" class="cart-btn">continue shopping</a>
+				</div>
+		
+		<?php 
+			}
+		?>
 			</div>
+			
 		</div>
 	</div>
 	<!-- end cart -->
@@ -211,3 +283,11 @@
 
 </body>
 </html>
+<?php
+}
+else
+{
+	$ok = $_SERVER['PHP_SELF'];
+	header('location:login.php?.$ok.');
+}
+?>

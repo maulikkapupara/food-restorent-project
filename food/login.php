@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php 
-	session_start();
-	error_reporting(0);
+	// session_start();
+	// error_reporting(0);
 	include ("include/config.php"); 
 ?>
 <head>
@@ -89,52 +89,52 @@
 	<!-- end breadcrumb section -->
 <!-- main contain -->
 <div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w" action="loginaction.php" method="post">
-					<span class="login100-form-title p-b-32">
-						Account Login
-					</span>
+	<div class="container-login100">
+		<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+			<form class="login100-form validate-form flex-sb flex-w" action="loginaction.php" method="post">
+				<span class="login100-form-title p-b-32">
+					Account Login
+				</span>
 
-					<span class="txt1 p-b-11">
-						Email
-					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="em" >
-						<span class="focus-input100"></span>
-					</div>
-					
-					<span class="txt1 p-b-11">
-						Password
-					</span>
-					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
-						<span class="btn-show-pass">
-							<i class="fa fa-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass" >
-						<span class="focus-input100"></span>
-					</div>
-					
-					<div class="flex-sb-m w-full p-b-48">
-							<a href="#" class="txt3">
-								Forgot Password?
-							</a>
-					</div>
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" name="login">
-							Login
-						</button>
-					</div>
-
-				</form>
-				<div class="register-link"></br></br>
-					<p align="center"> Don't you have account?
-					<a href="register.php">Sign Up Here</a>
-					</p>
+				<span class="txt1 p-b-11">
+					Email
+				</span>
+				<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
+					<input class="input100" type="text" name="em" >
+					<span class="focus-input100"></span>
 				</div>
+				
+				<span class="txt1 p-b-11">
+					Password
+				</span>
+				<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+					<span class="btn-show-pass">
+						<i class="fa fa-eye" onclick="myFunction()"></i>
+					</span>
+					<input class="input100" type="password" name="pass" id="myInput">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="flex-sb-m w-full p-b-48">
+						<a href="#" class="txt3">
+							Forgot Password?
+						</a>
+				</div>
+
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" type="submit" name="login">
+						Login
+					</button>
+				</div>
+
+			</form>
+			<div class="register-link"></br></br>
+				<p style="align='center'"> Don't you have account?
+				<a href="register.php">Sign Up Here</a>
+				</p>
 			</div>
 		</div>
+	</div>
 </div>
 <!-- end main contain -->
 	
@@ -165,6 +165,16 @@
 			</div>
 		</div>
 	</div>
+	<script>
+    function myFunction() {
+    var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+ </script>
 	<!-- end copyright -->
 	
 	<!-- jquery -->

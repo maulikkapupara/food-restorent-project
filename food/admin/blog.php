@@ -1,3 +1,7 @@
+<?php
+if(isset($_SESSION['$em']))
+{
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include("include/config.php"); ?>
