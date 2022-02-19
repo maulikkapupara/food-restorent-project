@@ -57,6 +57,42 @@
 	<link rel="stylesheet" type="text/css" href="assets/login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="assets/login/css/main.css">
 <!--===============================================================================================-->
+<script>
+
+function myFunction() {
+
+    var email;
+
+    email = document.getElementById("textEmail").value;
+
+        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+        if (reg.test(textEmail.value) == false) 
+
+        {
+
+            document.getElementById("demo").style.color = "red";
+
+            document.getElementById("demo").innerHTML ="Invalid EMail ->"+ email;
+
+            alert('Invalid Email Address ->'+email);
+
+            return false;
+
+        } else{
+
+        document.getElementById("demo").style.color = "DarkGreen";      
+
+        document.getElementById("demo").innerHTML ="Valid Email ->"+email;
+
+        }
+
+   return true;
+
+}
+
+</script>
+
 
 
 </head>
@@ -80,8 +116,7 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>Login Your Account Here</p>
-						<h1>Login-Registration</h1>
+						<p style="font-size: 25px; ">Registration Your Account</p>
 					</div>
 				</div>
 			</div>
@@ -92,7 +127,9 @@
 <div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-				<form class="login100-form validate-form flex-sb flex-w" action="registeraction.php" method="post">
+				<form class="login100-form validate-form flex-sb flex-w" action="registeraction.php" method="post"
+				onsubmit="return myFunction()"
+				>
 					<span class="login100-form-title p-b-32">
 						Account Register
 					</span>
@@ -101,30 +138,30 @@
 						Username
 					</span>
 					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="uname" >
+						<input class="input100" type="text" name="uname" required >
 						<span class="focus-input100"></span>
 					</div>
 
                     <span class="txt1 p-b-11">
 						Email
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="email" >
+					<div class="wrap-input100 validate-input m-b-36">
+						<input class="input100" type="email" id=textEmail  name="email" required >
 						<span class="focus-input100"></span>
 					</div>
-					
+					<span id=demo></span>
 					<span class="txt1 p-b-11">
 						Password
 					</span>
-					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-12">
 						<span class="btn-show-pass">
 							<i class="fa fa-eye"></i>
 						</span>
-						<input class="input100" type="password" name="password" >
+						<input class="input100" type="password" minlength="4" name="password" required>
 						<span class="focus-input100"></span>
 					</div>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit" name="submit">
+						<button class="login100-form-btn"  type="submit" name="submit">
 							Register
 						</button>
 					</div>

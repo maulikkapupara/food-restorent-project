@@ -41,18 +41,6 @@ if(isset($_SESSION['em']))
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
-<script>
-function test()
-{
-	var qt,tot,total;
-	qt = document.getElementById('qt').value;
-	tot = document.getElementById('tot').value;
-	total = qt*tot;
-	// alert(qt);
-	alert(total);
-
-}
-</script>
 <body>
 	
 	<!--PreLoader-->
@@ -96,7 +84,7 @@ function test()
 				
 				<div class="col-lg-8 col-md-12">
 					<div class="cart-table-wrap">
-						<form action="cartaction.php" method="post" >
+						<form action="cartupdate.php" method="post" >
 							<table class="cart-table">
 								<thead class="cart-table-head">
 									<tr class="table-head-row">
@@ -109,19 +97,7 @@ function test()
 										<th class="product-remove"></th>
 									</tr>
 								</thead>
-								<tfoot>
-									<tr>
-										<td colspan="7">
-										<div class="cart-buttons">
-											<a href="shop.php" class="boxed-btn">continue shopping</a>
-											<input type="submit" name="update" onClick="test()"; value="update cart" class="cart-btn" style="margin-left:358px;">	
-										</div>
-										<div>
-											
-										</div>
-										</td>
-									</tr>
-								</tfoot>
+								
 								<tbody>
 									<?php
 										$userid=$_SESSION['userid'];
@@ -133,15 +109,29 @@ function test()
 									<tr class="table-body-row">
 										<td class="product-image"><img src="Admin/<?php echo $row['pro_img']; ?>" alt=""></td>
 										<td class="product-name" name="pnm"><?php echo $row['pro_name']; ?></td>
+										<input type=hidden name=uid value="<?php echo $userid; ?>">
 										<input type="hidden" name="pid" value="<?php echo $row['pro_id']; ?>">
-										<td class="product-price" name="pric">₹<?php echo $row['pro_price']; ?></td>
-										<td class="product-quantity" name="qty"><input type="number"  id="qt" placeholder="<?php echo $row['pro_qty'];?>" min="1"></td>
+										<td class="product-price" name="pric">₹<?php echo $row['pro_price']; ?><input type="hidden" name="price" value="<?php echo $row['pro_price']; ?>"></td>
+										<td class="product-quantity" name="qty"><input type="number" name="qt" value="<?php echo $row['pro_qty'];?>" min="1"></td>
 										<td class="product-total" ><?php echo $row['total'];?><input type="hidden"  id="tot" value="<?php echo $row['total'];?>"></td>
 										<td class="product-remove"><a href="cartdelete.php?id=<?php echo $row['id']; ?>	" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash fa-lg" style="color:#e64940"></i></a></td>
 									
 									</tr>
 									<?php } ?>
 								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="7">
+										<div class="cart-buttons">
+											<a href="shop.php" class="boxed-btn">continue shopping</a>
+											<input type="submit" name="update" value="update cart" class="cart-btn" style="margin-left:358px;">	
+										</div>
+										<div>
+											
+										</div>
+										</td>
+									</tr>
+								</tfoot>
 							</table>
 						</form>
 					</div>
@@ -261,7 +251,7 @@ function test()
 	<!-- end copyright -->
 	
 	<!-- jquery -->
-	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="assets/js/jquery-1.11.3.min.js"></scrip>
 	<!-- bootstrap -->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 	<!-- count down -->

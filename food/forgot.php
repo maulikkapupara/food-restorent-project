@@ -79,7 +79,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p style="font-size: 25px; " >Login Your Account Here</p> 
+						<p>Login Your Account Here</p>
+						<h1>Login-Registration</h1>
 					</div>
 				</div>
 			</div>
@@ -90,48 +91,46 @@
 <div class="limiter">
 	<div class="container-login100">
 		<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
-			<form class="login100-form validate-form flex-sb flex-w" action="loginaction.php" method="post">
+			<form class="login100-form validate-form flex-sb flex-w" onSubmit = "return checkPassword(this)" action="forgot_db.php" method="post">
 				<span class="login100-form-title p-b-32">
-					Account Login
+					Forgot Password
 				</span>
 
 				<span class="txt1 p-b-11">
 					Email
 				</span>
-				<div class="wrap-input100 m-b-36" >
-					<input class="input100" type="email" name="em" required>
+				<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
+					<input class="input100" type="text" name="email" required>
 					<span class="focus-input100"></span>
 				</div>
 				
 				<span class="txt1 p-b-11">
-					Password
+					New Password
 				</span>
 				<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
 					<span class="btn-show-pass">
-						<i class="fa fa-eye" onclick="myFunction()"></i>
+						<i class="fa fa-eye" onclick="newPass()"></i>
 					</span>
-					<input class="input100" type="password" minlength="4"  name="pass" id="myInput">
+					<input class="input100" type="password" name="password1" id="newInput" required>
 					<span class="focus-input100"></span>
 				</div>
-				
-				<div class="flex-sb-m w-full p-b-48">
-						<a href="forgot.php" class="txt3">
-							Forgot Password?
-						</a>
+                <span class="txt1 p-b-11">
+					Confirm Password
+				</span>
+				<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+					<span class="btn-show-pass">
+						<i class="fa fa-eye" onclick="confirmPass()"></i>
+					</span>	
+					<input class="input100" type="password" name="password2" id="confirmInput" required>
+					<span class="focus-input100"></span>
 				</div>
-
+				<span style="color:red" id="conmsg"></span>
 				<div class="container-login100-form-btn">
-					<button class="login100-form-btn" type="submit" name="login">
-						Login
+					<button class="login100-form-btn" type="submit" name="submit" onClick="checkPassword" >
+						Change Password
 					</button>
 				</div>
-
 			</form>
-			<div class="register-link"></br></br>
-				<p style="align='center'"> Don't you have account?
-				<a href="register.php">Sign Up Here</a>
-				</p>
-			</div>
 		</div>
 	</div>
 </div>
@@ -164,15 +163,43 @@
 			</div>
 		</div>
 	</div>
-	<script>
-    function myFunction() {
-    var x = document.getElementById("myInput");
+<script>
+    function newPass() {
+    var x = document.getElementById("newInput");
         if (x.type === "password") {
             x.type = "text";
         } else {
             x.type = "password";
         }
     }
+
+    function confirmPass() {
+    var x = document.getElementById("confirmInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+	 // Function to check Whether both passwords
+            // is same or not.
+            function checkPassword(form) {
+                password1 = form.password1.value;
+                password2 = form.password2.value;
+  
+                // If Not same return False.    
+                if (password1 != password2) {
+                    document.getElementById('conmsg').innerText="Password does not match";
+                    return false;
+                }
+  
+                // If same return True.
+                else{
+                    alert("Password Match: Welcome to GeeksforGeeks!")
+                    return true;
+                }
+            }
  </script>
 	<!-- end copyright -->
 	
