@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2022 at 11:38 PM
+-- Generation Time: Feb 21, 2022 at 10:00 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -40,7 +40,10 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `username`, `email`, `password`) VALUES
 (1, 'maulik', 'maulik@emil.com', '123'),
-(2, 'maulik', 'maulik@emil.com', '123');
+(2, 'maulik', 'maulik@emil.com', '123'),
+(3, '', '', ''),
+(4, 'meet', 'meet@gmail.com', '1234'),
+(5, 'BM', 'yadavbhargav.yb@gmail.com', '4585');
 
 -- --------------------------------------------------------
 
@@ -108,14 +111,12 @@ CREATE TABLE `cart_item` (
 --
 
 INSERT INTO `cart_item` (`id`, `user_id`, `pro_id`, `pro_img`, `pro_name`, `pro_price`, `pro_qty`, `total`) VALUES
-(38, 1, 2, 'upload/product/pani puri.webp', 'panipuri', '20', '2', '40'),
-(39, 1, 3, 'upload/product/aloo-tikki.jpg', 'Aloo Tikki ', '50', '2', '100'),
 (40, 0, 9, 'upload/product/bread-pakoda-.jpg', 'Bread Pakoda', '20', '2', '40'),
-(41, 1, 11, 'upload/product/Dosa.jpg', 'Dosa ', '80', '1', '80'),
-(42, 1, 8, 'upload/product/Dabeli.jpg', 'Dabeli', '30', '1', '30'),
-(43, 1, 5, 'upload/product/Bhel-Puri.jpg', 'Bhel Puri ', '40', '1', '40'),
-(44, 1, 12, 'upload/product/Manchurian.jpeg', 'Manchurian ', '120', '1', '120'),
-(45, 1, 7, 'upload/product/Vada Pav.jpg', 'Vada Pav', '30', '2', '60');
+(46, 2, 6, 'upload/product/somaso.jpg', 'Samosa', '20', '9', '180'),
+(47, 3, 9, 'upload/product/bread-pakoda-.jpg', 'Bread Pakoda', '20', '2', '40'),
+(50, 3, 3, 'upload/product/aloo-tikki.jpg', 'Aloo Tikki ', '50', '1', '50'),
+(52, 1, 2, 'upload/product/pani puri.webp', 'panipuri', '20', '1', '20'),
+(53, 1, 3, 'upload/product/aloo-tikki.jpg', 'Aloo Tikki ', '50', '2', '100');
 
 -- --------------------------------------------------------
 
@@ -167,8 +168,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'maulik', 'maulikkapupara2805@email.com', '123'),
-(2, 'abcd', 'abc@gmail.com', 'ancd');
+(1, 'Bhargav', 'yadavbhargav.yb@gmail.com', '11111');
 
 --
 -- Indexes for dumped tables
@@ -218,7 +218,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `banner`
@@ -236,7 +236,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT for table `cart_item`
 --
 ALTER TABLE `cart_item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -248,7 +248,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

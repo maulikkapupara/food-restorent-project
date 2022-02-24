@@ -41,6 +41,14 @@ if(isset($_SESSION['em']))
 	<link rel="stylesheet" href="assets/css/responsive.css">
 
 </head>
+<script>
+	function tes()
+	{
+		var a;
+		a=document.getElementById('uid').Value;
+		alert(a);
+	}
+</script>
 <body>
 	
 	<!--PreLoader-->
@@ -55,7 +63,6 @@ if(isset($_SESSION['em']))
 	<?php //include('header.php'); ?>
 	<!-- end header -->
 
-	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
@@ -68,7 +75,6 @@ if(isset($_SESSION['em']))
 			</div>
 		</div>
 	</div>
-	<!-- end breadcrumb section -->
 
 	<!-- cart -->
 	<div class="cart-section mt-150 mb-150">
@@ -84,7 +90,8 @@ if(isset($_SESSION['em']))
 				
 				<div class="col-lg-8 col-md-12">
 					<div class="cart-table-wrap">
-						<form action="cartupdate.php" method="post" >
+					<!--  -->
+						<form  method="post" >
 							<table class="cart-table">
 								<thead class="cart-table-head">
 									<tr class="table-head-row">
@@ -94,6 +101,7 @@ if(isset($_SESSION['em']))
 										<th class="product-price">Price</th>
 										<th class="product-quantity">Quantity</th>
 										<th class="product-total">Sub Total</th>
+										<th class="product-update"></th>
 										<th class="product-remove"></th>
 									</tr>
 								</thead>
@@ -112,8 +120,12 @@ if(isset($_SESSION['em']))
 										<input type=hidden name=uid value="<?php echo $userid; ?>">
 										<input type="hidden" name="pid" value="<?php echo $row['pro_id']; ?>">
 										<td class="product-price" name="pric">₹<?php echo $row['pro_price']; ?><input type="hidden" name="price" value="<?php echo $row['pro_price']; ?>"></td>
+
 										<td class="product-quantity" name="qty"><input type="number" name="qt" value="<?php echo $row['pro_qty'];?>" min="1"></td>
 										<td class="product-total" ><?php echo $row['total'];?><input type="hidden"  id="tot" value="<?php echo $row['total'];?>"></td>
+										<td class="product-remove">
+										<input type="submit" name="ed" value="Edit" onSubmit="tes();">	
+										</a></td>
 										<td class="product-remove"><a href="cartdelete.php?id=<?php echo $row['id']; ?>	" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fas fa-trash fa-lg" style="color:#e64940"></i></a></td>
 									
 									</tr>
@@ -124,10 +136,7 @@ if(isset($_SESSION['em']))
 										<td colspan="7">
 										<div class="cart-buttons">
 											<a href="shop.php" class="boxed-btn">continue shopping</a>
-											<input type="submit" name="update" value="update cart" class="cart-btn" style="margin-left:358px;">	
-										</div>
-										<div>
-											
+											<a href="clearcart.php" class="boxed-btn" style="margin-left:358px;">Clear Cart</a>
 										</div>
 										</td>
 									</tr>
@@ -279,5 +288,18 @@ else
 {
 	$ok = $_SERVER['PHP_SELF'];
 	header('location:login.php?.$ok.');
+}
+?>
+<?php
+if(isset($_POST['ed']))
+{
+	$uid=$_POST['uid'];
+	$pid=$_POST['pid'];
+	$qt=$_POST['qty'];
+	$pr=$_POST['price'];
+
+	echo "uid=".$uid;
+	echo "pid=".$pid;
+	echo "qt=".$qt;
 }
 ?>

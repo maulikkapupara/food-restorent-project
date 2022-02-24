@@ -1,5 +1,6 @@
 <?php
-if(isset($_SESSION['$em']))
+session_start();
+if(isset($_SESSION['em']))
 {
 ?>
 <!DOCTYPE html>
@@ -321,3 +322,9 @@ if(isset($_SESSION['$em']))
 
 </html>
 <!-- end document-->
+<?php
+}
+else{
+    header("location:index.php");
+}
+?>

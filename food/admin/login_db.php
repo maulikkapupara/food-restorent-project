@@ -6,7 +6,7 @@ if(isset($_POST['log']))
 	$em = $_POST['email'];
 	$ps = $_POST['password'];
 
-	$qu = mysqli_query($con,"select * from admin where email='$em' and password='$ps'");
+	$qu = mysqli_query($conn,"select * from admin where email='$em' and password='$ps'");
 
 	if($ok=mysqli_fetch_array($qu))
 	{

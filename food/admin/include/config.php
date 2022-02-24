@@ -13,12 +13,12 @@ if ($conn->connect_error) {
 }
 //echo "Connected successfully";
 
-session_start();
-$user = $_SESSION['usersession'];
+
+// $user = $_SESSION['usersession'];
 	
 if($user==''){
 	$_SESSION['logout'] = "Yor sessin has expired. Please login again";
-	header('Location: index.php');
+	//header('Location: index.php');
 }
 
 ?>

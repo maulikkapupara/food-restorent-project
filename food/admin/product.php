@@ -1,5 +1,6 @@
 <?php
-if(isset($_SESSION['$em']))
+session_start();
+if(isset($_SESSION['em']))
 {
 ?>
 <!DOCTYPE html>

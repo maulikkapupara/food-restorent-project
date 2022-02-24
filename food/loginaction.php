@@ -18,8 +18,9 @@ if(isset($_POST['login']))
 	}
 	else
 	{
-		echo '<script>alert("please enter proper email or password")</script>';
-		header("location:login.php");
+		echo "<script>alert('please enter proper email or password');</script>";
+		echo "<script>window.location.
+		assign('login.php')</script>";
 	
 	}
 // header("location:index.php");
